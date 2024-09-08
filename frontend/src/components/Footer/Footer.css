@@ -1,0 +1,49 @@
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+    color: rgb(0, 0, 0);
+    height: 200px;
+    
+    background-color: rgb(255, 255, 255);
+}
+.footerbox{
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+.logo h1{
+    font-weight: 700;
+}
+
+.icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lists ul{
+    display: flex;
+    gap: 1rem;
+    font-weight: 500;
+}
+.lists{
+    border-left: 1px solid rgb(0, 0, 0);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+       
+}
+
+
+.icons ul{
+    display: flex;
+    gap: 2rem;
+
+}

@@ -1,0 +1,36 @@
+.reviewContainer{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 1rem;
+}
+
+.reviewCard{
+    background-color: black;
+    height: 350px;
+    width: 300px;
+    border-radius: 1rem;
+}
+.reviewbox img {
+    width: 130px;
+    height: 132px;
+    border-radius: 50%;
+    position: relative;
+    object-fit: cover;
+    top: 5rem;
+    border: 6px solid white;
+        
+    }
+    .reviewbox{
+       
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+        .reviewCard{
+        
+            display: flex;
+            padding: 3rem;
+            align-items: center;
+        }
+        

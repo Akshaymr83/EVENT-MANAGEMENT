@@ -1,0 +1,124 @@
+.WorkContainer{
+    max-height: 2000px;  
+}
+.WorkTitle h1 span{
+    color: black;
+}
+.WorkTitle{
+    margin-left: 5rem;
+    margin-top: 2rem;
+}
+.Work-head2{
+    color: black;
+    font-size:6rem ;
+    font-weight: 700;
+    text-align: center;
+}
+.WorkTitle2{
+    margin-left: 5rem; 
+    margin-top: 2rem;
+  
+}
+.Work-head3{
+    color: rgb(0, 0, 0);
+    margin-top: 3rem;
+    font-size:8rem ;
+    font-weight: 800;
+    overflow-y: hidden;
+    text-align: center;
+}
+.WorkTitle2 p{
+    color: rgba(255, 214, 0, 1);
+    font-size:2rem ;
+    font-weight: 600;
+    text-align: center;
+}
+/* Webkit Browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Adjust the width as needed */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #d80000; /* Background color of the scrollbar track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #e00000; /* Color of the scrollbar thumb */
+    border-radius: 80px; /* Round corners of the scrollbar thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f70000; /* Color of the scrollbar thumb when hovered */
+  }
+  
+  /* Firefox */
+  * {
+    scrollbar-width: thin; /* Scrollbar width */
+    scrollbar-color: #000000 #f6f6f6;
+    scroll-behavior: smooth; 
+    /* Scrollbar thumb and track color */
+  }
+  .feedbacks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  .feedbackstitle {
+    font-size: 3rem;
+    font-weight: 700;
+    padding-bottom: 5px;
+    width: 300px;
+    border-bottom:5px solid  rgba(255, 214, 0, 1);; ;
+  }
+  .input-container{
+    width: 600px;
+    margin-top: 3rem;
+
+   
+  
+  }
+  .inputbox2{
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+  }
+  .input-container input {
+    width: 100%;
+    margin-bottom: 2.4rem;
+    height: 2.7rem;
+    padding-left: 22px;
+    color: rgb(0, 0, 0);
+    background: rgb(0 0 0 / 84%);
+    border-radius: 4rem;
+    border: 1px solid #000000;
+  }
+  .input-container input::placeholder{
+    color: rgba(255, 255, 255, 0.59);
+  }
+  .sub-btn {
+ border-radius:4rem;
+
+  }
+  @media (max-width: 991px) {
+
+    .Work-head2 {
+      color: black;
+      font-size: 5rem;
+      font-weight: 700;
+      text-align: center;
+  }
+      }
+      
+      @media (max-width: 767px) {
+     
+
+        
+      }
+      
+      @media (max-width: 480px) {
+       
+      
+        
+      }
+    

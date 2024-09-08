@@ -1,0 +1,97 @@
+.About-title h1{
+    color: rgba(255, 214, 0, 1);
+    font-weight: 700;
+}
+.About-title h1 span{
+    color: black;
+}
+.About-title{
+    margin-left: 5rem;
+    margin-top: 2rem;
+}
+.About-img img{
+    height: 400px;
+
+    object-fit: contain;
+    border-radius: 10px;
+    
+}
+.About-text {
+    width: 900px;
+    color: rgb(0, 0, 0);
+    margin-top: 3rem;
+    font-size: 17px;
+    line-height: 36px;
+}
+.About-img2 img{
+    height: 600px;
+    width: 100%;
+    border-radius: 15px;
+
+    object-fit: contain;
+    border-radius: 10px;
+    
+}
+.container3{
+    margin-left: 5rem;
+}
+.About-head3{
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    margin-bottom: 4rem;
+}
+.About-container{
+    margin-bottom: 5rem;
+}
+.container3 .experience{
+    color: black;
+    
+}
+.About-head2 span{
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+   
+}
+.About-head2 {
+    font-size: 6rem;
+    text-align: center;
+    font-weight: 700;
+    color: black;
+}
+.About-head2p {
+   font-size: 17px;
+   line-height: 36px;
+}
+.choose-div{
+    display: flex;
+    gap: 4rem;
+    padding:1rem 8rem 0 2rem ;
+}
+
+
+@media (max-width: 991px) {
+.About-div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.choose-div{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+.About-text{
+    width: 400px;
+    
+}
+  }
+  
+  @media (max-width: 767px) {
+    
+  }
+  
+  @media (max-width: 480px) {
+  
+    
+  }
