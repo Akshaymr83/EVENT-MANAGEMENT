@@ -117,6 +117,64 @@ router.post("/signup", (req, res) => {
             });
         });
 });
+// Login
+
+// Login route
+router.post("/login", async (req, res) => {
+    const { email, password } = req.body;
+
+    // Trim the input fields
+    const trimmedEmail = email.trim();
+    const trimmedPassword = password.trim();
+
+    // Check if any input fields are empty
+    if (trimmedEmail === "" || trimmedPassword === "") {
+        return res.json({
+            status: "Failed",
+            message: "Empty input field",
+        });
+    }
+
+    try {
+        // Check if user exists
+        const user = await User.findOne({ email: trimmedEmail });
+        if (!user) {
+            return res.json({
+                status: "Failed",
+                message: "User not found",
+            });
+        }
+
+        // Compare the password with the hashed password in the database
+        const isPasswordValid = await bcrypt.compare(trimmedPassword, user.password);
+        if (!isPasswordValid) {
+            return res.json({
+                status: "Failed",
+                message: "Invalid password",
+            });
+        }
+
+        // User authenticated successfully
+        res.json({
+            status: "Success",
+            message: "User logged in successfully",
+            data: {
+                userId: user._id,
+                name: user.name,
+                email: user.email,
+                verified: user.verified,
+                isAdmin: user.isAdmin 
+            },
+        });
+    } catch (error) {
+        console.error(error);
+        res.json({
+            status: "Failed",
+            message: "An error occurred during login",
+        });
+    }
+});
+
 
 // OTP email sending function
 const sendOTPVerificationEmail = async ({ _id, email }, res) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Top from '../NAVBAR/Nav'
-import '../Careers/Careers.css'
+import './Careers.css'
 import img from '../images/cheerful-young-businessman-sitting-seminar_1262-2088.jpg'
 
 function Careers() {

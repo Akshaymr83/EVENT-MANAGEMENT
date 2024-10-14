@@ -1,159 +1,98 @@
+// src/components/Login/Login.js
 
-
-// src/Login.js
-
-// import React, { useState } from "react";
-// import axios from "axios";
-// import { useParams, useNavigate } from "react-router-dom";
-// import Loader from "../Loader/Loader"; // Assuming the Loader component is in the same directory
-
-// const VerifyOTP = () => {
-//     const [otp, setOtp] = useState("");
-//     const [message, setMessage] = useState("");
-//     const { userId } = useParams(); // Get userId from URL params
-//     const [loading, setLoading] = useState(false);
-//     const navigate = useNavigate();
-
-//     const handleVerify = async (e) => {
-//         e.preventDefault();
-//         setLoading(true);
-//         setTimeout(async () => {
-//             try {
-//                 const response = await axios.post("http://localhost:5000/api/user/verify-otp", {
-//                     userId,
-//                     otp,
-//                 });
-
-//                 // If verification is successful, navigate to login
-//                 if (response.data.status === "Success") {
-//                     setMessage(response.data.message);
-//                     navigate("/");
-//                 } else {
-//                     setMessage(response.data.message);
-//                 }
-//             } catch (error) {
-//                 if (error.response && error.response.data.message) {
-//                     setMessage(error.response.data.message);
-//                 } else {
-//                     setMessage("OTP verification failed. Please try again.");
-//                 }
-//             } finally {
-//                 setLoading(false); // Hide loader after submission
-//             }
-//         }, 3000); // Simulate a 3-second loading time
-//     };
-
-//     return (
-//         <>
-//             {loading ? (
-//                 <Loader /> // Ensure the Loader component is properly imported and used here
-//             ) : (
-//                 <form  onSubmit={handleVerify}>
-//                     <input
-//                         type="text"
-//                         placeholder="Enter OTP"
-//                         onChange={(e) => setOtp(e.target.value)}
-//                         required
-//                     />
-//                     <button type="submit">Verify OTP</button>
-//                 </form>
-//             )}
-//             {message && <p>{message}</p>}
-//         </>
-//     );
-// };
-
-// export default VerifyOTP;
 import React, { useState } from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
-import Loader from "../Loader/Loader"; // Ensure this component is properly imported
+import { useNavigate, Link } from "react-router-dom";
+import Loader from "../Loader/Loader"; // Import the Loader component
+import '../Login/Login.css';
 
-const VerifyOTP = () => {
-    const [otp, setOtp] = useState(["", "", "", ""]); // Array to hold 4 digits
+const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
-    const { userId } = useParams(); // Get userId from URL params
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
-    // Update OTP input
-    const handleOtpChange = (e, index) => {
-        const value = e.target.value;
-        if (/^\d$/.test(value) || value === "") { // Allow only digits
-            const newOtp = [...otp];
-            newOtp[index] = value;
-            setOtp(newOtp);
-        }
-    };
-
-    // Combine the OTP values into a single string
-    const combinedOtp = otp.join("");
-
-    const handleVerify = async (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
         setLoading(true);
-        setTimeout(async () => {
-            try {
-                const response = await axios.post("http://localhost:5000/api/user/verify-otp", {
-                    userId,
-                    otp: combinedOtp,
-                });
+    
+        console.log("Login attempt initiated"); // Check if function is called
+    
+        try {
+            const response = await axios.post("http://localhost:5000/api/user/login", {
+                email,
+                password,
+            });
+    
+            console.log("Login Response:", response); // Log response
+    
+            if (response.data.status === "Success") {
+                const userData = response.data.data; // Access user data correctly
+                console.log("User Data:", userData); // Log user data
+                localStorage.setItem("user", JSON.stringify(userData)); // Store user data in localStorage
 
-                // If verification is successful, navigate to login
-                if (response.data.status === "Success") {
-                    setMessage(response.data.message);
-                    navigate("/");
-                } else {
-                    setMessage(response.data.message);
+                if(userData.isAdmin){
+                    navigate("/adminHome");
                 }
-            } catch (error) {
-                if (error.response && error.response.data.message) {
-                    setMessage(error.response.data.message);
-                } else {
-                    setMessage("OTP verification failed. Please try again.");
+                else{
+                    navigate("/"); // Navigate to home page
+
                 }
-            } finally {
-                setLoading(false); // Hide loader after submission
+               
+            } else {
+                setMessage(response.data.message);
+                console.log("Login failed message:", response.data.message); // Log failure message
             }
-        }, 3000); // Simulate a 3-second loading time
+            
+        } catch (error) {
+            console.error("Login error:", error); // Log error
+            if (error.response && error.response.data.message) {
+                setMessage(error.response.data.message);
+            } else {
+                setMessage("Login failed. Please try again.");
+            }
+        } finally {
+            setLoading(false);
+            console.log("Loading state:", loading); // Check loading state
+        }
     };
-
+    
     return (
-        <div className="verify-otp">
+        <>
             {loading ? (
-                <Loader /> // Show loader during API request
+                <Loader /> // Show loader when loading state is true
             ) : (
-                <form className="otp-Form" onSubmit={handleVerify}>
-                    <span className="mainHeading">Enter OTP</span>
-                    <p className="otpSubheading">
-                        We have sent a verification code to your mobile number
-                    </p>
-                    <div className="inputContainer">
-                        {otp.map((value, index) => (
+                <div className='login'>
+                    <div className="form-container">
+                        <p className="title">Login to <b>CLICK BYTES</b></p>
+                        <form className="form" onSubmit={handleLogin}>
                             <input
-                                key={index}
-                                type="text"
-                                maxLength="1"
-                                className="otp-input"
-                                value={value}
-                                onChange={(e) => handleOtpChange(e, index)}
+                                type="email"
+                                className="input"
+                                placeholder="Email"
+                                onChange={(e) => setEmail(e.target.value)}
                                 required
                             />
-                        ))}
+                            <input
+                                type="password"
+                                className="input"
+                                placeholder="Password"
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                            <button className="form-btn" type="submit">Login</button>
+                        </form>
+                        {message && <p>{message}</p>}
+                        <div className="signup-link">
+                            <p>Don't have an account?</p>
+                            <Link to="/signup">Sign Up</Link>
+                        </div>
                     </div>
-                    <button className="verifyButton" type="submit">
-                        Verify
-                    </button>
-                    
-                    <p className="resendNote">
-                        Didn't receive the code? <button className="resendBtn">Resend Code</button>
-                    </p>
-                </form>
+                </div>
             )}
-            {message && <p>{message}</p>}
-        </div>
+        </>
     );
 };
 
-export default VerifyOTP;
-
+export default Login;

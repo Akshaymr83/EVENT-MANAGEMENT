@@ -1,7 +1,8 @@
 import React from 'react'
-import '../About/About.css'
+import './About.css'
 import Top from '../NAVBAR/Nav'
 import Footer from '../Footer/Footer';
+
 import aboutimg from '../images/caucasian-romantic-young-couple-celebrating-their-marriage-city-tender-bride-groom-modern-city-s-street-family-relationship-love-concept.jpg';
 
 function About() {

@@ -5,7 +5,7 @@ import '../Services/Services.css'
 function Services() {
   return (
     <>
-    <div className="services" id='services'>
+    <div className="services" id='services' >
         {/* <Top/> */}
         <div  style={{marginTop:'4rem',marginBottom:'3rem'}}> 
             <h1 className='About-head2' style={{textAlign:'center',fontWeight:'700'}} >OUR <span style={{color:'rgba(255, 214, 0, 1)'}} >SERVICES</span></h1>

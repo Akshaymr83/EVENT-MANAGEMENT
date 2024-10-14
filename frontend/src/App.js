@@ -5,14 +5,17 @@ import Footer from './components/Footer/Footer';
 import About from './components/About/About';
 import Services from './components/Services/Services';
 import '../src/App.css';
-import Login from './components/Login/Login';
-import SignUp from './components/Login/SignUp';
+
 import Signup from './components/Login/SignUp';
-import VerifyOTP from './components/Login/Login';
+import VerifyOTP from './components/Login/Verify';
 import Loader from './components/Loader/Loader';
 import CompanyHome from './components/Company/ComHome/CompanyHome';
 import CompanyLogin from './components/Company/ComLogin/ComLogin';
 import CompanySignup from './components/Company/ComLogin/ComSignup';
+import Login from './components/Login/Login';
+import EventBooking from './components/Booking/Booking';
+import AdminHome from './components/ADMIN PAGE/home/AdminHome';
+
 
 function App() {
   return (
@@ -24,12 +27,18 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/verify-otp/:userId" element={<VerifyOTP />} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/booking" element={<EventBooking/>} />
+ 
 
 
           {/* COMPANY */}
-          <Route path="/companyLogin" element={<CompanyLogin />} />
+          {/* <Route path="/companyLogin" element={<CompanyLogin />} />
           <Route path="/companySignup" element={<CompanySignup />} />
-          <Route path ="/companyHome" element={<CompanyHome/>} />
+          <Route path ="/companyHome" element={<CompanyHome/>} /> */}
+
+          {/* ADMIN */}
+          <Route path="/adminHome" element={<AdminHome />} />
         </Routes>
    
       </Router>

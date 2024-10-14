@@ -7,8 +7,11 @@ name :String ,
 email:String,
 password:String,
 dateOfBirth:Date,
-verified:Boolean
+verified:Boolean,
+isAdmin: { type: Boolean, default: false }
 });
 
 const User = mongoose.model('User', userSchema);
 module.exports =User;
+// models/User.js
+
