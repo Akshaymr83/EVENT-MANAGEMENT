@@ -1,7 +1,7 @@
 import React from 'react'
-import Top from '../NAVBAR/Nav'
+
 import bgimg from '../images/festive-men-women-holding-balloons.jpg'
-import '../Services/Services.css'
+import './Services.css'
 function Services() {
   return (
     <>
