@@ -12,6 +12,7 @@ import AdminEvent from './components/ADMIN PAGE/Event/AdminEvent';
 import EventList from './components/ADMIN PAGE/Event/EventList';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import BookingDetails from './components/USER PAGE/Booking/BookingDetails';
 
 function App() {
   const [events, setEvents] = useState([]); // Shared state for events
@@ -38,11 +39,14 @@ function App() {
           <Route path="/verify-otp/:userId" element={<VerifyOTP />} />
           <Route path="/login" element={<Login />} />
           <Route path="/booking" element={<EventBooking />} />
+          <Route path="/bookingDetails" element={<BookingDetails />} />
 
           {/* ADMIN */}
           <Route path="/adminHome" element={<AdminHome />} />
           <Route path="/adminEvent" element={<AdminEvent setEvents={setEvents} />} />
           <Route path="/eventList" element={<EventList events={events} setEvents={setEvents} />} />
+          
+          
         </Routes>
       </Router>
     </div>

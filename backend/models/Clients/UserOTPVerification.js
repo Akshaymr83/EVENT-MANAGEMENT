@@ -1,3 +1,4 @@
+
 // backend/models/UserOTPVerification.js
 
 const mongoose = require("mongoose");  // Import mongoose
