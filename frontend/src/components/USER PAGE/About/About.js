@@ -8,10 +8,10 @@ import aboutimg from '../images/caucasian-romantic-young-couple-celebrating-thei
 function About() {
   return (
     <>
-    {/* <Top/> */}
+
     <div className='AboutContainer' id='about' style={{marginBottom:'4rem'}}>
         <div className='About-title'> 
-            <h1 className='ourstory'><span >WHO WE ARE</span>​<br></br>
+            <h1 className='ourstory anim'><span >WHO WE ARE</span>​<br></br>
             We love to create,​<br></br>design and produce awesome event!</h1>
         </div>
 

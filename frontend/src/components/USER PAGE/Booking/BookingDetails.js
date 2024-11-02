@@ -29,6 +29,7 @@ const BookingDetails = () => {
 
   return (
     <div className="booking-details-container">
+      <div className="bookingBox">
       <h2>Booking Details</h2>
       <div className="booking-cards">
         {bookings.map((booking) => (
@@ -48,6 +49,7 @@ const BookingDetails = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ import axios from "axios";
 import "./Booking.css";
 import { useNavigate } from "react-router-dom";
 
-const EventBooking = () => {
+const Booking = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -62,128 +62,159 @@ const EventBooking = () => {
   };
 
   // Final submit after confirmation
-  const handleFinalSubmit = async () => {
-    try {
-      await axios.post("http://localhost:5000/api/event/bookings", formData); // Ensure correct URL and data structure
+// Final submit after confirmation
+const handleFinalSubmit = async () => {
+  // Prepare booking data
+  const bookingData = {
+      name: formData.name,
+      email: formData.email,
+      state: formData.state,
+      district: formData.district,
+      mobileNumber: formData.mobileNumber,
+      bookingDate: formData.bookingDate,
+      numberOfPeople: formData.numberOfPeople,
+      event: formData.event
+  };
+
+  // Log the booking data to the console
+  console.log('Booking data:', bookingData);
+
+  try {
+      const response = await axios.post("http://localhost:5000/api/event/bookings", bookingData);
+      console.log("Booking response:", response.data); // Log response
       alert("Booking Confirmed!");
       setModalOpen(false);
-      navigate("/bookingDetails")
-    } catch (error) {
-      console.error("Error submitting booking:", error);
-      alert("Failed to confirm booking. Please try again.");
-    }
-  };
+      navigate("/bookingDetails");
+  } catch (error) {
+      if (error.response) {
+          // The request was made, and the server responded with a status code
+          console.error("Error submitting booking:", error.response.data);
+          alert(`Failed to confirm booking: ${error.response.data.message}`);
+      } else if (error.request) {
+          // The request was made but no response was received
+          console.error("No response received:", error.request);
+          alert("Failed to confirm booking. No response from server.");
+      } else {
+          // Something happened in setting up the request
+          console.error("Error in request setup:", error.message);
+          alert("Failed to confirm booking. Please try again.");
+      }
+  }
+};
+
+  
 
   return (
     <div className="booking-container">
       <h2>Event Booking System</h2>
 
       <form className="booking-form">
-        <div className="form-group">
-          <label><FaUser /> Name:</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            placeholder="Enter your name"
-            required
-          />
-        </div>
+  <div className="form-group">
+    <label> Name:</label>
+    <input
+      type="text"
+      name="name"
+      value={formData.name}
+      onChange={handleInputChange}
+      placeholder="Enter your name"
+      required
+    />
+  </div>
 
-        <div className="form-group">
-          <label><FaEnvelope /> Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            placeholder="Enter your email"
-            required
-          />
-        </div>
+  <div className="form-group">
+    <label> Email:</label>
+    <input
+      type="email"
+      name="email"
+      value={formData.email}
+      onChange={handleInputChange}
+      placeholder="Enter your email"
+      required
+    />
+  </div>
 
-        <div className="form-group">
-          <label>State:</label>
-          <input
-            type="text"
-            name="state"
-            value={formData.state}
-            onChange={handleInputChange}
-            placeholder="Enter your state"
-            required
-          />
-        </div>
+  <div className="form-group">
+    <label>State:</label>
+    <input
+      type="text"
+      name="state"
+      value={formData.state}
+      onChange={handleInputChange}
+      placeholder="Enter your state"
+      required
+    />
+  </div>
 
-        <div className="form-group">
-          <label>District:</label>
-          <input
-            type="text"
-            name="district"
-            value={formData.district}
-            onChange={handleInputChange}
-            placeholder="Enter your district"
-            required
-          />
-        </div>
+  <div className="form-group">
+    <label>District:</label>
+    <input
+      type="text"
+      name="district"
+      value={formData.district}
+      onChange={handleInputChange}
+      placeholder="Enter your district"
+      required
+    />
+  </div>
 
-        <div className="form-group">
-          <label><FaPhone /> Mobile Number:</label>
-          <input
-            type="tel"
-            name="mobileNumber" // Changed to match backend
-            value={formData.mobileNumber}
-            onChange={handleInputChange}
-            placeholder="Enter your mobile number"
-            required
-          />
-        </div>
+  <div className="form-group">
+    <label> Mobile Number:</label>
+    <input
+      type="tel"
+      name="mobileNumber"
+      value={formData.mobileNumber}
+      onChange={handleInputChange}
+      placeholder="Enter your mobile number"
+      required
+    />
+  </div>
 
-        <div className="form-group">
-          <label>Select Event:</label>
-          <select
-            name="event"
-            value={formData.event}
-            onChange={handleInputChange}
-            required
-          >
-            <option value="">Choose an event</option>
-            {events.map((event) => (
-              <option key={event._id} value={event._id}>
-                {event.name}
-              </option>
-            ))}
-          </select>
-        </div>
+  <div className="form-group">
+    <label>Select Event:</label>
+    <select
+      name="event"
+      value={formData.event}
+      onChange={handleInputChange}
+      required
+    >
+      <option value="">Choose an event</option>
+      {events.map((event) => (
+        <option key={event._id} value={event._id}>
+          {event.name}
+        </option>
+      ))}
+    </select>
+  </div>
 
-        <div className="form-group">
-          <label><FaCalendarAlt /> Booking Date:</label>
-          <DatePicker
-            selected={formData.bookingDate}
-            onChange={handleDateChange}
-            dateFormat="Pp"
-            minDate={new Date()}
-            required
-          />
-        </div>
+  <div className="form-group">
+    <label> Booking Date:</label>
+    <DatePicker
+      selected={formData.bookingDate}
+      onChange={handleDateChange}
+      dateFormat="Pp"
+      minDate={new Date()}
+      required
+    />
+  </div>
 
-        <div className="form-group">
-          <label>Number of People:</label>
-          <input
-            type="number"
-            name="numberOfPeople"
-            value={formData.numberOfPeople}
-            onChange={handleInputChange}
-            min="1"
-            max="10"
-            required
-          />
-        </div>
+  <div className="form-group">
+    <label>Number of People:</label>
+    <input
+      type="number"
+      name="numberOfPeople"
+      value={formData.numberOfPeople}
+      onChange={handleInputChange}
+      min="1"
+      max="10"
+      required
+    />
+  </div>
 
-        <button type="button" onClick={handleConfirm} className="confirm-btn">
-          Confirm Booking
-        </button>
-      </form>
+  <button type="button" onClick={handleConfirm} className="confirm-btn full-width">
+    Confirm Booking
+  </button>
+</form>
+
 
       <Modal isOpen={modalOpen} onRequestClose={() => setModalOpen(false)} className="modal-content">
         <h2>Confirm Your Booking</h2>
@@ -205,4 +236,10 @@ const EventBooking = () => {
   );
 };
 
-export default EventBooking;
+export default Booking;
+
+
+
+
+
+

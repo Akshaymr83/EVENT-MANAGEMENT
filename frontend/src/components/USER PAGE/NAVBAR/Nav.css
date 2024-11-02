@@ -1,6 +1,7 @@
 .navbarcontainer { 
   top: 0;
-  z-index: 1000; /* Ensures the navbar is above other content */
+  z-index: 1000;
+ /* Ensures the navbar is above other content */
 }
 
 .navbar {

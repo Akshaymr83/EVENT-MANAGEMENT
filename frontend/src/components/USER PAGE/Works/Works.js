@@ -99,7 +99,7 @@ function Works() {
       <div className="WorkContainer" >
        
         
-        <div style={{margin:'7rem'}}>
+        <div className='photobox' >
         <ImageList variant="masonry" cols={3} gap={8}>
   {itemData.map((item) => (
     <ImageListItem key={item.img}>

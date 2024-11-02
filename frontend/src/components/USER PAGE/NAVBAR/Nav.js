@@ -34,11 +34,11 @@ function Top() {
     <div className='navbarcontainer'>
       <Navbar fixed="top" expand="lg" className="navbar">
         <Container>
-          <Navbar.Brand href="#home">CLICK BYTES</Navbar.Brand>
+          <Navbar.Brand >CLICK BYTES</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#home" as={Link} to="/">Home</Nav.Link>
               <Nav.Link href="#about">About Us</Nav.Link>
             
               <NavDropdown href="#services" title="Services" id="collapsible-nav-dropdown">

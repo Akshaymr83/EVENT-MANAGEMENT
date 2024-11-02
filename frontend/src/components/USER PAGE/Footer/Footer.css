@@ -5,9 +5,11 @@
     height: 200px;
     
     background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
 }
 .footerbox{
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    
 }
 .logo{
     display: flex;
@@ -29,6 +31,7 @@
     display: flex;
     gap: 1rem;
     font-weight: 500;
+    list-style-type: none;
 }
 .lists{
     border-left: 1px solid rgb(0, 0, 0);
@@ -45,5 +48,6 @@
 .icons ul{
     display: flex;
     gap: 2rem;
+    list-style-type: none;
 
 }

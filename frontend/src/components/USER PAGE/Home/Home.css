@@ -170,6 +170,7 @@ button:hover {
   .text-overlay {
     width: 90%;
     padding: 10px;
+   
   }
 
   .headline {
@@ -210,9 +211,10 @@ button:hover {
   .main-div{
     padding: 0px 1rem;
   }
-  .text-overlay {
+  .text-overlay  {
     top: 70%;
     padding: 10px;
+    animation-delay: 0.5s;
   }
 
   .headline {
@@ -225,6 +227,108 @@ button:hover {
 
   .background h1 {
     font-size: 1.5rem;
+  }
+}
+
+.anim{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range:entry 0% cover 40%;
+
+}
+@keyframes appear {
+  0%{
+    opacity: 0;
+    transform: translateY(-100px);
+    
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
+}
+
+.homeImage img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 17px;
+}
+
+.content {
+
+  flex-direction: row;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.images-container1h1{
+font-size: 4rem;
+}
+
+.homeImage{
+  animation: appearText ease-in;
+  animation-timeline: view();
+  animation-range:entry 0% cover 40%;
+
+}
+@keyframes appearText {
+  0%{
+    opacity: 0;
+  scale: 0.8;
+    
+  }
+  to {
+    opacity: 1;
+   scale: 1;
+  }
+  
+}
+
+.H-anim{
+  animation: TextH1 linear;
+  animation-timeline: view();
+  animation-range:entry 0% cover 40%;
+
+}
+@keyframes TextH1 {
+  0%{
+    opacity: 0;
+  transform: translateX(0);
+    
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-17px);
+  }
+  
+}
+
+@media (max-width: 767px) {
+  .main-div {
+      padding: 0px 2rem;
+      width: 200%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .main-div {
+      padding: 0px 2rem;
+      width: 200%;
+  }
+}
+
+
+@media (max-width: 376px) {
+  .main-div {
+      padding: 0px 2rem;
+      width: 200%;
   }
 }
 

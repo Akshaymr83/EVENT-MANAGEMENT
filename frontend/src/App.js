@@ -6,13 +6,15 @@ import Services from './components/USER PAGE/Services/Services';
 import Signup from './components/Login/SignUp';
 import VerifyOTP from './components/Login/Verify';
 import Login from './components/Login/Login';
-import EventBooking from './components/USER PAGE/Booking/Booking';
+
 import AdminHome from './components/ADMIN PAGE/home/AdminHome';
 import AdminEvent from './components/ADMIN PAGE/Event/AdminEvent';
 import EventList from './components/ADMIN PAGE/Event/EventList';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import BookingDetails from './components/USER PAGE/Booking/BookingDetails';
+import Top from './components/USER PAGE/NAVBAR/Nav';
+import EventBooking from './components/USER PAGE/Booking/EventBooking';
 
 function App() {
   const [events, setEvents] = useState([]); // Shared state for events
@@ -29,16 +31,20 @@ function App() {
   }, []);
 
   return (
+    
     <div className="App">
+
+    
       <Router>
+      <Top/>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home/>} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/verify-otp/:userId" element={<VerifyOTP />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/booking" element={<EventBooking />} />
+          <Route path="/booking" element={<EventBooking/>} />
           <Route path="/bookingDetails" element={<BookingDetails />} />
 
           {/* ADMIN */}

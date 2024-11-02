@@ -30,7 +30,8 @@ const Login = () => {
             if (response.data.status === "Success") {
                 const userData = response.data.data; // Access user data correctly
                 console.log("User Data:", userData); // Log user data
-                localStorage.setItem("user", JSON.stringify(userData)); // Store user data in localStorage
+                localStorage.setItem("user", JSON.stringify(userData));
+                localStorage.setItem("userId", userData.id); // Store user data in localStorage
 
                 if(userData.isAdmin){
                     navigate("/adminHome");
