@@ -4,11 +4,12 @@ import './Booking.css'
 import Footer from '../Footer/Footer'
 
 function EventBooking() {
+  const userId = localStorage.getItem('userId'); 
   return (
     <>
     <div className="parallax-background">
       <div className="booking-overlay">
-        <Booking />
+        <Booking userId={userId}/>
       </div>
    
       

@@ -1,4 +1,6 @@
+// models/Booking.js
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const bookingSchema = new mongoose.Schema({
   name: {
@@ -33,6 +35,11 @@ const bookingSchema = new mongoose.Schema({
   event: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Event', // Reference to the event model
+    required: true,
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User', // Reference to the User model
     required: true,
   },
   createdAt: {

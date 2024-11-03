@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Booking.css"; // Ensure you have this CSS file for styling
+import Footer from "../Footer/Footer";
+import Top from "../NAVBAR/Nav";
 
 const BookingDetails = () => {
   const [bookings, setBookings] = useState([]);
@@ -28,7 +30,9 @@ const BookingDetails = () => {
   };
 
   return (
+    <>    <Top/>
     <div className="booking-details-container">
+  
       <div className="bookingBox">
       <h2>Booking Details</h2>
       <div className="booking-cards">
@@ -49,8 +53,12 @@ const BookingDetails = () => {
           </div>
         ))}
       </div>
+      
     </div>
+  
     </div>
+    </>
+    
   );
 };
 

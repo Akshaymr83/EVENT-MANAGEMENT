@@ -38,6 +38,8 @@ const AdminEvent = ({ setEvents }) => {
     };
 
     return (
+        <>
+        <h2>ADD EVENT</h2>
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Name:</label>
@@ -70,6 +72,7 @@ const AdminEvent = ({ setEvents }) => {
             </div>
             <button type="submit">Add Event</button>
         </form>
+        </>
     );
 };
 

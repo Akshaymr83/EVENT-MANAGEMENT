@@ -1,5 +1,5 @@
 import React from 'react';
-import "../NAVBAR/Nav.css";
+import "../../USER PAGE/NAVBAR/Nav.css";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,7 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, useNavigate } from 'react-router-dom';
 import { colors } from '@mui/material';
 
-function Top() {
+function AdminNav() {
   const navigate = useNavigate(); // For redirecting the user after logout
   
   // Safely retrieve and parse the user data from localStorage
@@ -26,7 +26,7 @@ function Top() {
   const handleLogout = () => {
     alert("Do you want to logout")
     localStorage.removeItem("user"); // Remove user data from localStorage
-    navigate("/"); // Redirect to signup or login page after logout
+    navigate("/adminHome"); // Redirect to signup or login page after logout
     window.location.reload(); // Refresh the page to reflect logout state
   };
 
@@ -38,13 +38,13 @@ function Top() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="#home" as={Link} to="/">Home</Nav.Link>
-              <Nav.Link href="#about">About Us</Nav.Link>
+              <Nav.Link href="#home" as={Link} to="/packagesForm">Packages</Nav.Link>
+              <Nav.Link href="#about">Event</Nav.Link>
             
-              <NavDropdown href="#services" title="Services" id="collapsible-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/booking" href="#action/3.1"> Book a Event</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2"  as={Link} to="/bookingDetails"  >
-                Booked Details
+              <NavDropdown href="" title="Services" id="collapsible-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/adminEvent" href="#action/3.1"> Add Event</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2"  as={Link} to="/eventList"  >
+                Added Events
               </NavDropdown.Item>           
             </NavDropdown>
               <Nav.Link href="#works">Our Works</Nav.Link>
@@ -128,4 +128,4 @@ function Top() {
   );
 }
 
-export default Top
+export default AdminNav

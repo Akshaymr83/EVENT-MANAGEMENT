@@ -15,6 +15,9 @@ import axios from 'axios';
 import BookingDetails from './components/USER PAGE/Booking/BookingDetails';
 import Top from './components/USER PAGE/NAVBAR/Nav';
 import EventBooking from './components/USER PAGE/Booking/EventBooking';
+import EventPackages from './components/USER PAGE/Packages/Packages';
+import PackagesForm from './components/ADMIN PAGE/PackagesForm';
+import PackagesCard from './components/ADMIN PAGE/Packages/PackagesCard';
 
 function App() {
   const [events, setEvents] = useState([]); // Shared state for events
@@ -36,7 +39,7 @@ function App() {
 
     
       <Router>
-      <Top/>
+      {/* <Top/> */}
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/about" element={<About />} />
@@ -46,11 +49,15 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/booking" element={<EventBooking/>} />
           <Route path="/bookingDetails" element={<BookingDetails />} />
+          <Route path= "/packages" element={<EventPackages/>}/>
 
           {/* ADMIN */}
           <Route path="/adminHome" element={<AdminHome />} />
           <Route path="/adminEvent" element={<AdminEvent setEvents={setEvents} />} />
           <Route path="/eventList" element={<EventList events={events} setEvents={setEvents} />} />
+          <Route path="/packagesForm"  element={<PackagesForm/>}/>
+          <Route path="/packagesCard"  element={<PackagesCard/>}/>
+
           
           
         </Routes>

@@ -17,6 +17,7 @@ import img from '../images/female-wedding-planner-working-ceremony.jpg'
 function Home() {
   return (
     <>
+    <Top/>
      
     <div className='main-div'>
     

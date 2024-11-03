@@ -7,6 +7,7 @@ const authRoutes = require('./api/User');
 const companyRoutes = require('./api/Company');
 const adminRoutes = require('./api/Admin');
 const bookingRoutes = require('./api/Booking');
+const packagesRoutes = require('./api/packages')
 
 const app = express();
 
@@ -26,6 +27,7 @@ mongoose.connect(process.env.MONGO_URI, { useUnifiedTopology: true })
 app.use('/api/user', authRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/event', bookingRoutes); // Ensure booking routes are registered
+app.use('/api/packages',packagesRoutes)
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

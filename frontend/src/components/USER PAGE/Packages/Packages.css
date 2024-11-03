@@ -1,0 +1,148 @@
+/* General container styling */
+.event-packages {
+  font-family: Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f9;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.event-packages h2 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  color: #333;
+  text-align: center;
+}
+
+/* Container for package options and details, with full height */
+.package-container {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 900px;  /* Restricting width for a better look on larger screens */
+  width: 100%;
+  height: 90%; /* Adjust height to cover most of the viewport */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+  margin-top: 6rem;
+}
+
+/* Left side for package options */
+.package-options {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border-right: 1px solid #e0e0e0;
+  background-color: #fafafa;
+}
+
+.package-option {
+  padding: 15px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.package-option.selected {
+  background-color: #fff0a5;
+  border-color: #ffcc00;
+}
+
+.package-option label {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #000000;
+  cursor: pointer;
+}
+
+/* Right side for package details */
+.package-details {
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.package-details h3 {
+  font-size: 1.5em;
+  color: #007bff;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.package-details p {
+  margin: 10px 0;
+  color: #555;
+}
+
+.features {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+  color: #333;
+}
+
+.features li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.features li::before {
+  content: '✔';
+  color: #007bff;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.order-total {
+  margin-top: 15px;
+  padding: 15px;
+ border: 2px solid #ffcc00;
+  border-radius: 8px;
+  text-align: right;
+  color:rgb(0, 0, 0);
+}
+
+
+.order-total p {
+  margin: 5px 0;
+  color: black;
+}
+
+.price {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #e57373;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .package-container {
+      flex-direction: column;
+      height: auto;
+  }
+
+  .package-options {
+      border-right: none;
+      border-bottom: 1px solid #e0e0e0;
+  }
+
+  .order-total {
+      text-align: center;
+  }
+}
