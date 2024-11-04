@@ -21,6 +21,7 @@ import PackagesCard from './components/ADMIN PAGE/Packages/PackagesCard';
 
 function App() {
   const [events, setEvents] = useState([]); // Shared state for events
+  const userId = localStorage.getItem("userId");
 
   // Fetch events initially
   useEffect(() => {
@@ -48,7 +49,7 @@ function App() {
           <Route path="/verify-otp/:userId" element={<VerifyOTP />} />
           <Route path="/login" element={<Login />} />
           <Route path="/booking" element={<EventBooking/>} />
-          <Route path="/bookingDetails" element={<BookingDetails />} />
+          <Route path="/bookingDetails" element={<BookingDetails userId={userId} />} />
           <Route path= "/packages" element={<EventPackages/>}/>
 
           {/* ADMIN */}

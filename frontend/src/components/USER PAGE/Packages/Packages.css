@@ -1,38 +1,44 @@
+
+
 /* General container styling */
 .event-packages {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
-  width: 100vw;
-  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+/* Top navbar should be fixed at the top if needed */
+.main-content {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f4f4f9;
   padding: 20px;
   box-sizing: border-box;
 }
 
-.event-packages h2 {
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  color: #333;
-  text-align: center;
-}
-
-/* Container for package options and details, with full height */
+/* Centered container for package content with fixed width */
 .package-container {
+  max-width: 900px;  /* Restrict width for better layout on large screens */
+  width: 100%;
+  height: 90%; /* Adjust height to cover most of the viewport */
   display: flex;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   overflow: hidden;
-  max-width: 900px;  /* Restricting width for a better look on larger screens */
-  width: 100%;
-  height: 90%; /* Adjust height to cover most of the viewport */
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
   background-color: #fff;
   margin-top: 6rem;
 }
 
-/* Left side for package options */
+/* Footer should be full width */
+footer {
+  width: 100%;
+}
+
+/* Package options styling */
 .package-options {
   flex: 1;
   display: flex;
@@ -45,7 +51,7 @@
 
 .package-option {
   padding: 15px;
-  border: 2px solid transparent;
+  border: 2px solid #ffcc00;
   border-radius: 6px;
   background-color: #ffffff;
   cursor: pointer;
@@ -64,7 +70,7 @@
   cursor: pointer;
 }
 
-/* Right side for package details */
+/* Package details styling */
 .package-details {
   flex: 2;
   padding: 20px;
@@ -75,9 +81,8 @@
 }
 
 .package-details h3 {
-  font-size: 1.5em;
-  color: #007bff;
   font-size: 1.6rem;
+  color: #007bff;
   text-transform: uppercase;
   margin-bottom: 0.5em;
   font-weight: 600;
@@ -112,12 +117,11 @@
 .order-total {
   margin-top: 15px;
   padding: 15px;
- border: 2px solid #ffcc00;
+  border: 2px solid #ffcc00;
   border-radius: 8px;
   text-align: right;
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
-
 
 .order-total p {
   margin: 5px 0;
@@ -133,16 +137,16 @@
 /* Responsive layout for smaller screens */
 @media (max-width: 768px) {
   .package-container {
-      flex-direction: column;
-      height: auto;
+    flex-direction: column;
+    height: auto;
   }
 
   .package-options {
-      border-right: none;
-      border-bottom: 1px solid #e0e0e0;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
   }
 
   .order-total {
-      text-align: center;
+    text-align: center;
   }
 }

@@ -50,3 +50,21 @@ const bookingSchema = new mongoose.Schema({
 
 const Booking = mongoose.model('Booking', bookingSchema);
 module.exports = Booking;
+
+
+// const mongoose = require('mongoose');
+
+// const bookingSchema = new mongoose.Schema({
+//   name: { type: String, required: true },
+//   email: { type: String, required: true },
+//   state: { type: String },
+//   district: { type: String },
+//   mobileNumber: { type: String },
+//   bookingDate: { type: Date, required: true },
+//   numberOfPeople: { type: Number },
+//   event: { type: String },
+//   userId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' }, // Ensure 'User' is the correct reference
+// });
+
+// const Booking = mongoose.model('Booking', bookingSchema);
+// module.exports = Booking;

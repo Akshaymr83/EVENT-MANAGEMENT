@@ -40,6 +40,8 @@
 //     res.status(400).json({ message: 'Failed to retrieve bookings', error });
 //   }
 // });
+
+
 // router.delete("/bookings/:id", async (req, res) => {
 //   try {
 //     const bookingId = req.params.id;
@@ -59,62 +61,111 @@
 // module.exports = router;
 
 
+
 const express = require('express');
 const Booking = require('../models/Admin/booking'); // Make sure the path and model are correct
 const router = express.Router();
+const mongoose = require('mongoose'); 
 
 // Route to handle booking creation
-// routes/bookings.js
+router.get('/bookings/:userId', async (req, res) => {
+  const userId = req.params.userId;
 
-// POST route to create a new booking
-router.post('/bookings', async (req, res) => {
+  // Check if userId is a valid ObjectId
+  if (!mongoose.Types.ObjectId.isValid(userId)) {
+    return res.status(400).json({ message: "Invalid user ID" });
+  }
+
   try {
-    const {
-      name,
-      email,
-      state,
-      district,
-      bookingDate,
-      mobileNumber,
-      numberOfPeople,
-      event,
-      user, // User ID sent as part of the request body
-    } = req.body;
+    const bookings = await Booking.find({ user: userId });
+    res.json(bookings);
+  } catch (error) {
+    console.error("Error fetching bookings:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
 
-    // Create a new booking document
-    const newBooking = new Booking({
-      name,
-      email,
-      state,
-      district,
-      bookingDate,
-      mobileNumber,
-      numberOfPeople,
+
+// POST a new booking
+
+
+
+
+
+router.post('/bookings', async (req, res) => {
+ 
+  try {
+    // const { userId, event, bookingDate, numberOfPeople } = req.body;
+    const { name, email, state, district, mobileNumber, bookingDate, numberOfPeople, event, userId } = req.body;
+
+    // Check if a booking already exists for the user on the same event and date
+    const existingBooking = await Booking.findOne({
+      userId,
       event,
-      user, // Associate the booking with a user
+      bookingDate,
     });
 
-    // Save the booking document to the database
-    const savedBooking = await newBooking.save();
+    if (existingBooking) {
+      return res.status(400).json({ message: 'Booking already exists for this event on the selected date.' });
+    }
 
-    // Send back the saved booking as the response
+    const newBooking = new Booking({
+          name,
+          email,
+          state,
+          district,
+          mobileNumber,
+          bookingDate,
+          numberOfPeople,
+          event,
+          user: userId, // Use userId as user
+        });
+    const savedBooking = await newBooking.save();
     res.status(201).json(savedBooking);
   } catch (error) {
-    res.status(400).json({ message: 'Error creating booking', error });
+    console.error("Error creating booking:", error);
+    res.status(500).json({ message: 'Error creating booking', error: error.message });
   }
 });
 
+// Export the router
 
 
-// GET: Retrieve all bookings
-router.get('/bookings', async (req, res) => {
-  try {
-    const bookings = await Booking.find().populate('event');
-    res.status(200).json(bookings);
-  } catch (error) {
-    res.status(400).json({ message: 'Failed to retrieve bookings', error });
-  }
-});
+
+
+// router.post('/bookings', async (req, res) => {
+//   const { name, email, state, district, mobileNumber, bookingDate, numberOfPeople, event, userId } = req.body; // Include userId in the request
+
+//   const newBooking = new Booking({
+//     name,
+//     email,
+//     state,
+//     district,
+//     mobileNumber,
+//     bookingDate,
+//     numberOfPeople,
+//     event,
+//     user: userId, // Use userId as user
+//   });
+
+//   console.log(newBooking)
+
+//   try {
+//     const savedBooking = await newBooking.save(); // Attempt to save the booking
+//     res.status(201).json(savedBooking); // Respond with the saved booking
+//   } catch (error) {
+//     // Log the error to the console
+//     console.error("Error creating booking:", error.message); // Log the error message for debugging
+//     console.error(error.stack); // Log the full stack trace for more details
+
+//     // Send a response back to the client with the error message
+//     res.status(500).json({ message: "Internal server error", error: error.message });
+//   }
+// });
+
+
+
+
 router.delete("/bookings/:id", async (req, res) => {
   try {
     const bookingId = req.params.id;
@@ -132,5 +183,6 @@ router.delete("/bookings/:id", async (req, res) => {
 });
 
 module.exports = router;
+
 
 
