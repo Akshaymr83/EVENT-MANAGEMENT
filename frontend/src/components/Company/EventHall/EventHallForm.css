@@ -1,0 +1,132 @@
+
+  
+  .event-hall-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('../../USER\ PAGE/images/smiling-women-man-evening-wear-with-glasses-drinks-floor.jpg'); /* Update with your background image path */
+    background-size: cover;
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed;
+   
+    min-height: 110vh;
+    padding: 0 5%;
+    color: #fff;
+  }
+  
+  .event-hall-content {
+    max-width: 50%;
+  }
+  
+  .event-hall-content h1 {
+    font-size: 3em;
+    line-height: 1.2;
+  }
+  
+  .event-hall-content h1 span {
+    color: #ffc107; /* Yellow color for emphasis */
+  }
+  
+  .event-hall-content p {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #ccc;
+  }
+  
+  .event-hall-form {
+    background-color: #ffd608fb;
+    padding: 30px;
+    max-width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    color: #333;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+  
+  }
+  
+  .event-hall-form h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  
+  .event-hall-form input, .event-hall-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .event-hall-form textarea {
+    resize: vertical;
+  }
+  
+  .event-hall-form input[type="file"] {
+    margin-top: 10px;
+  }
+  
+  .event-hall-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .event-hall-form button:hover {
+    background-color: #000;
+  }
+  
+  .event-hall-form ul {
+    list-style: none;
+    font-size: 0.9em;
+    color: #333;
+  }
+  
+  .event-hall-form h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.event-hall-form input[type="text"],
+.event-hall-form input[type="number"],
+.event-hall-form textarea,
+.event-hall-form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+}
+
+.event-hall-form label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+
+
+.event-hall-form ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.event-hall-form ul li {
+  font-size: 14px;
+  color: #555;
+}

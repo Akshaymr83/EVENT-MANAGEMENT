@@ -170,7 +170,7 @@
 
 //   <div className="form-group">
 //     <label> Mobile Number:</label>
-//     <input
+ //     <input
 //       type="tel"
 //       name="mobileNumber"
 //       value={formData.mobileNumber}

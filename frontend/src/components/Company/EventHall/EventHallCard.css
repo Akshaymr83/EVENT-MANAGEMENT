@@ -1,0 +1,335 @@
+.event-hall-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.event-hall-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.event-hall-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px; /* Fixed width */
+  height: 350px; /* Increased height to fit the buttons */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensures the content fits within the increased card height */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}
+
+.hall-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; /* Set a specific height for the image carousel */
+  position: relative;
+}
+
+.hall-image {
+  width: 100%; /* Image fills container width */
+  height: 100%; /* Image fills the container's height */
+  object-fit: cover; /* Ensure the image covers the space proportionally */
+  border-radius: 4px;
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.btn-prev, .btn-next {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.twio-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn {
+  width: 45%; /* Reduced width for the buttons */
+}
+
+@media (max-width: 768px) {
+  .event-hall-container {
+    padding: 10px;
+  }
+
+  .event-hall-card {
+    width: 220px; /* Adjust width for smaller screens */
+  }
+
+  .card-body {
+    gap: 8px;
+  }
+
+  .twio-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-hall-container {
+    padding: 5px;
+    gap: 15px;
+  }
+
+  .event-hall-card {
+    width: 100%; /* Cards should take full width on very small screens */
+  }
+
+  .card-title {
+    font-size: 1.1rem; /* Slightly smaller text for small screens */
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .twio-buttons {
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+  }
+}
+
+  .event-hall-card:hover {
+    transform: translateY(-10px); /* Adds a hover effect */
+  }
+  
+  .event-hall-card img {
+    width: 100%; /* Ensures the image takes the full width */
+    aspect-ratio: 16/9; /* Aspect ratio of 16:9 for consistent image size */
+    object-fit: cover; /* Prevents image stretching */
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .event-hall-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .event-hall-card p {
+    font-size: 14px;
+    color: #666;
+    flex-grow: 1; /* Ensures content area grows */
+  }
+  
+  /* Card Action Container - Holds the buttons */
+  .card-action {
+    margin-top: auto; /* Pushes the buttons to the bottom of the card */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensures buttons span the full width */
+  }
+  
+  .card-action button {
+    width: 48%; /* Ensures buttons are of equal width */
+    padding: 8px 15px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-action button:hover {
+    background-color: #0056b3;
+  }
+  .card-body{
+    display: flex;
+    flex-direction: column;
+    flex: 0.2 0.2 auto;
+    align-items:baseline
+  }
+  .card-title{
+    color: rgb(31, 30, 30);
+  }
+  /* Modal Background */
+  /* Modal Customization */
+.modal-content {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  background-color: #000000;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.form-control {
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-secondary {
+  background-color: #000000;
+  border-color: #6c757d;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.twoButtons button {
+  min-width: 100px;
+}
+/* Enhanced label styling */
+.form-label {
+  font-size: 14px; /* Adjusts font size */
+  font-weight: 600; /* Slightly less bold than 'bold' */
+  color: #000000; /* Lighter gray color for text */
+  margin-bottom: 8px; /* Increases space between label and input */
+  display: block; /* Ensures label is on its own line */
+  line-height: 1.5; /* Adds line height for better readability */
+  text-transform: capitalize; /* Makes the text capitalized (optional) */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Changes the font family */
+}
+
+/* Add a focus effect for labels when input is focused */
+.form-label.active {
+  color: #007bff; /* Change color when input is focused */
+  font-weight: bold; /* Make it bold on focus */
+  transition: all 0.3s ease; /* Smooth transition effect */
+}
+/* Overlay Background Blur */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Apply blur effect */
+  z-index: 1040; /* Make sure the overlay stays behind the modal */
+}
+.modal-content {
+  position: relative;
+  z-index: 1050; /* Ensure modal content stays on top */
+ /* Horizontal centering */
+}
+
+/* Centering Modal Dialog */
+.modal-dialog {
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  transform: translate(-50%, -50%); /* Center the modal vertically and horizontally */
+}
+
+/* Optional: Styling for modal */
+.modal-header {
+  background-color: #000000;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.twoButtons{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9rem;
+
+}
+.event-hall-container {
+  padding: 20px;
+}
+
+.event-hall-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 20px;
+  padding: 0;
+}
+
+.event-hall-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.twio-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+  .event-hall-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row on medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .event-hall-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .event-hall-grid {
+    grid-template-columns: 1fr; /* 1 card per row on very small screens */
+  }
+}

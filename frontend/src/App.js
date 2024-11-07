@@ -18,10 +18,18 @@ import EventBooking from './components/USER PAGE/Booking/EventBooking';
 import EventPackages from './components/USER PAGE/Packages/Packages';
 import PackagesForm from './components/ADMIN PAGE/PackagesForm';
 import PackagesCard from './components/ADMIN PAGE/Packages/PackagesCard';
+import CompanyHome from './components/Company/ComHome/CompanyHome';
+import CompanyLogin from './components/Company/ComLogin/ComLogin';
+import CompanySignup from './components/Company/ComLogin/ComSignup';
+import EventHallCard from './components/Company/EventHall/EventHallCard';
+import EventHallForm from './components/Company/EventHall/EventHallForm';
+import VerifyCompanyOTP from './components/Company/ComLogin/CompanyVerifyOtp';
+import CompanyLayout from './components/Company/CompanyLayout/CompanyLayout';
 
 function App() {
   const [events, setEvents] = useState([]); // Shared state for events
   const userId = localStorage.getItem("userId");
+  const companyId = localStorage.getItem("companyId");
 
   // Fetch events initially
   useEffect(() => {
@@ -58,6 +66,16 @@ function App() {
           <Route path="/eventList" element={<EventList events={events} setEvents={setEvents} />} />
           <Route path="/packagesForm"  element={<PackagesForm/>}/>
           <Route path="/packagesCard"  element={<PackagesCard/>}/>
+
+          {/* COMPANY */}
+
+          <Route path="/companyHome" element={<CompanyLayout><CompanyHome /></CompanyLayout>} />
+          <Route path="/companyLogin" element={<CompanyLayout><CompanyLogin /></CompanyLayout>} />
+          <Route path="/companySignup" element={<CompanyLayout><CompanySignup /></CompanyLayout>} />
+          <Route path="/verify-Companyotp/:companyId" element={<CompanyLayout><VerifyCompanyOTP /></CompanyLayout>} />
+          <Route path="/eventHallCard" element={<CompanyLayout><EventHallCard /></CompanyLayout>} />
+          <Route path="/eventHallForm" element={<CompanyLayout><EventHallForm /></CompanyLayout>} />
+
 
           
           

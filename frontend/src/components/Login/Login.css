@@ -1,4 +1,10 @@
-.login-page {
+
+
+
+  /* VERIFY OTP__ */
+  /* From Uiverse.io by vinodjangid07 */ 
+
+  .verif.login-page {
   display: flex;
   height: 100vh;
   background-color: #f8f9fa;
@@ -83,13 +89,7 @@
 .signup-link p {
   display: inline;
   margin-right: 0.5rem;
-}
-
-
-  /* VERIFY OTP__ */
-  /* From Uiverse.io by vinodjangid07 */ 
-
-  .verify-otp{
+}y-otp{
     height: 100vh;
     display: flex;
     flex-direction: column;

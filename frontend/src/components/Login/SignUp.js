@@ -115,6 +115,9 @@ import { useNavigate, Link } from "react-router-dom";
 import Loader from "../Loader/Loader"; // Import the Loader component
 import '../Login/signup.css'; // Updated CSS path
 import img from "../USER PAGE/images/female-friends-sitting-field-with-american-decorations.jpg"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+
 
 const Signup = () => {
     const [name, setName] = useState("");
@@ -157,6 +160,8 @@ const Signup = () => {
                 <Loader />
             ) : (
                 <div className="signup-page">
+                       <Link to={'/'} style={{textDecoration:'none',}}><FontAwesomeIcon icon={faHome} size="2x" color="black" style={{padding:'5px'}}/></Link>
+                 
                     <div className="form-section">
                         <div className="brand-logo">Click Bytes</div>
                         <p className="welcome-text">Welcome Back!</p>
@@ -193,8 +198,12 @@ const Signup = () => {
                         </form>
                         {message && <p className="error-message">{message}</p>}
                         <div className="login-link">
-                            <p>Already have an account?</p>
+                            <p>Already have an User account?</p>
                             <Link to="/login">Login</Link>
+                        </div>
+                        <div className="login-link">
+                            <p>Company account?</p>
+                            <Link to="/companySignup">Login</Link>
                         </div>
                     </div>
 

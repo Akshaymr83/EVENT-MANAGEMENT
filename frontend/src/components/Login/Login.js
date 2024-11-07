@@ -105,6 +105,9 @@ import { useNavigate, Link } from "react-router-dom";
 import Loader from "../Loader/Loader"; // Import the Loader component
 import './Login.css'; // Updated CSS path
 import img from "../USER PAGE/images/full-shot-young-people-partying-outdoors.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -160,7 +163,9 @@ const Login = () => {
                 <Loader />
             ) : (
                 <div className="login-page">
-                    <div className="image-section">
+                    
+
+                    <div className="image-section" style={{borderRadius: "0 3rem 3rem 0"}}>
                         <img src={img} alt="Login Visual" className="login-image" />
                     </div>
 
