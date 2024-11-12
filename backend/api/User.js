@@ -266,4 +266,24 @@ router.post("/verify-otp", async (req, res) => {
 });
 
 
+
+router.get("/users", async (req, res) => {
+    try {
+        // Retrieve all users, sorting by creation date in descending order
+        const users = await User.find().sort({ _id: -1 });
+        res.json({
+            status: "Success",
+            message: "Users retrieved successfully",
+            data: users,
+        });
+    } catch (error) {
+        console.error(error);
+        res.json({
+            status: "Failed",
+            message: "An error occurred while retrieving users",
+        });
+    }
+});
+
+
 module.exports = router;

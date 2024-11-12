@@ -302,4 +302,22 @@ router.post("/verify-Companyotp", async (req, res) => {
     }
 });
 
+// Get All Company Details
+router.get("/companyDetails", async (req, res) => {
+    try {
+        const companies = await Company.find({}, "company_name email verified"); // Select specific fields
+        res.json({
+            status: "Success",
+            data: companies,
+        });
+    } catch (error) {
+        console.error(error);
+        res.json({
+            status: "Failed",
+            message: "An error occurred while fetching company details",
+        });
+    }
+});
+
+
 module.exports = router;

@@ -34,23 +34,26 @@ function AdminNav() {
     <div className='navbarcontainer'>
       <Navbar fixed="top" expand="lg" className="navbar">
         <Container>
-          <Navbar.Brand >CLICK BYTES</Navbar.Brand>
+          <Navbar.Brand >CLICK BYTES ADMIN</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="#home" as={Link} to="/packagesForm">Packages</Nav.Link>
-              <Nav.Link href="#about">Event</Nav.Link>
-            
-              <NavDropdown href="" title="Services" id="collapsible-nav-dropdown">
+            <Nav className="ms-auto">    
+            <Nav.Link href="" as={Link} to='/userTable'>Users</Nav.Link>      
+            <Nav.Link href="" as={Link} to='/companyTable'>Companies</Nav.Link>          
+              <NavDropdown href="" title="Events" id="collapsible-nav-dropdown">
               <NavDropdown.Item as={Link} to="/adminEvent" href="#action/3.1"> Add Event</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2"  as={Link} to="/eventList"  >
                 Added Events
               </NavDropdown.Item>           
             </NavDropdown>
-              <Nav.Link href="#works">Our Works</Nav.Link>
-              <Nav.Link href="#contact">Contact Us</Nav.Link>
-              <Nav.Link as={Link} to="/packages" href="#careers">Packages</Nav.Link>
-            </Nav>
+            <NavDropdown href="" title="Packages" id="collapsible-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/packagesForm" href="#action/3.1"> Add Packages</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2"  as={Link} to="/packagesCard"  >
+                Added Packages
+              </NavDropdown.Item>           
+            </NavDropdown>
+           
+                    </Nav>
             {parsedUser ? (
               <div className="user-options" style={{ position: 'relative' }}>
                 {/* New popup structure */}
@@ -92,25 +95,7 @@ function AdminNav() {
                           <span onClick={handleLogout}>Log Out</span>
                         </button>
                       </li>
-                      {/* <li>
-                        <button>
-                          <svg
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1"
-                            strokeLinecap="round"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M2.598 9h-1.055c1.482-4.638 5.83-8 10.957-8 6.347 0 11.5 5.153 11.5 11.5s-5.153 11.5-11.5 11.5c-5.127 0-9.475-3.362-10.957-8h1.055c1.443 4.076 5.334 7 9.902 7 5.795 0 10.5-4.705 10.5-10.5s-4.705-10.5-10.5-10.5c-4.568 0-8.459 2.923-9.902 7zm12.228 3l-4.604-3.747.666-.753 6.112 5-6.101 5-.679-.737 4.608-3.763h-14.828v-1h14.826z"
-                            ></path>
-                          </svg>
-                          <span>Sign Up</span>
-                        </button>
-                      </li> */}
+                    
                     </ul>
                   </nav>
                 </label>

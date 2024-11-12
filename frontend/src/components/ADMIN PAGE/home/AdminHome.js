@@ -5,11 +5,11 @@ import AdminNav from '../AdminNav/AdminNav'
 
 function AdminHome() {
   return (
-    <div className='adminContainer'>AdminHome
-    <AdminNav/>
-
-     {/* <Link to={"/adminEvent"}><button><h2>Add event</h2></button></Link> 
-     <Link to={"/eventList"}><button><h2>EventList</h2></button></Link>  */}
+    <div className='adminContainer'>
+      <div className='adminContainer-text'>
+        <h1>WELOCME TO CLICKBYTES</h1>
+        <h1>ADMIN SECTION</h1>
+        </div> 
     </div>
   )
 }

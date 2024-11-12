@@ -1,3 +1,26 @@
-.adminContainer{
-    margin-top: 6rem;
+
+.adminContainer {
+    background-image: url("../../USER\ PAGE/images/female-wedding-planner-working-with-bride-groom.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(20px);
+}
+.adminContainer-text{
+    color: rgb(255, 255, 255);
+ 
+
+    text-align: center;
+
+}
+.adminContainer-text h1{
+    font-size: 5rem;
+    font-weight: 700;
 }

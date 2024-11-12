@@ -25,6 +25,9 @@ import EventHallCard from './components/Company/EventHall/EventHallCard';
 import EventHallForm from './components/Company/EventHall/EventHallForm';
 import VerifyCompanyOTP from './components/Company/ComLogin/CompanyVerifyOtp';
 import CompanyLayout from './components/Company/CompanyLayout/CompanyLayout';
+import AdminLayout from './components/ADMIN PAGE/AdminLayout/AdminLayout';
+import UsersTable from './components/ADMIN PAGE/Tables/UserTable';
+import CompanyTable from './components/ADMIN PAGE/Tables/CompanyTable';
 
 function App() {
   const [events, setEvents] = useState([]); // Shared state for events
@@ -61,11 +64,13 @@ function App() {
           <Route path= "/packages" element={<EventPackages/>}/>
 
           {/* ADMIN */}
-          <Route path="/adminHome" element={<AdminHome />} />
-          <Route path="/adminEvent" element={<AdminEvent setEvents={setEvents} />} />
-          <Route path="/eventList" element={<EventList events={events} setEvents={setEvents} />} />
-          <Route path="/packagesForm"  element={<PackagesForm/>}/>
-          <Route path="/packagesCard"  element={<PackagesCard/>}/>
+          <Route path="/adminHome" element={<AdminLayout><AdminHome /></AdminLayout>} />
+          <Route path="/adminEvent" element={<AdminLayout><AdminEvent setEvents={setEvents} /></AdminLayout>} />
+          <Route path="/eventList" element={<AdminLayout><EventList events={events} setEvents={setEvents} /></AdminLayout>} />
+          <Route path="/packagesForm" element={<AdminLayout><PackagesForm /></AdminLayout>} />
+          <Route path="/packagesCard" element={<AdminLayout><PackagesCard /></AdminLayout>} />
+          <Route path="/userTable" element={<AdminLayout><UsersTable /></AdminLayout>} />
+          <Route path="/companyTable" element={<AdminLayout><CompanyTable /></AdminLayout>} />
 
           {/* COMPANY */}
 

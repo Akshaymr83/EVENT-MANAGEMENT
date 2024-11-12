@@ -49,7 +49,7 @@ function CompanyNavbar() {
             </NavDropdown>
               <Nav.Link href="#works">Our Works</Nav.Link>
               <Nav.Link href="#contact">Contact Us</Nav.Link>
-              <Nav.Link as={Link} to="/packages" href="#careers">Packages</Nav.Link>
+            
             </Nav>
             {parsedUser ? (
               <div className="user-options" style={{ position: 'relative' }}>
