@@ -48,7 +48,7 @@
     background-color: #1c222c;
 }
 .box2form{
-  margin-left: 9rem;
+  margin-left: 1rem;
   position: relative;
 }
 .form{
@@ -380,7 +380,12 @@
 @media (max-width: 376px) {
  
     .box2form {
-      margin-left: -81rem;
+      margin-left: -51rem;
+    }
+    .box2{
+      display: grid
+      ;
+          grid-template-columns: 1fr 0fr;
     }
 }
 @media (width: 768px) {
@@ -390,9 +395,14 @@
     padding: 15px;
 }
 .form {
-  left: 35%;
+  left: 31cqb;
   max-width: 85%;
   padding: 15px;
+}
+.box2{
+  display: grid
+  ;
+      grid-template-columns: 1fr 0fr;
 }
   
 }

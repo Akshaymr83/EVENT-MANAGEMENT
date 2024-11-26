@@ -292,6 +292,7 @@ select {
 @media (max-width: 768px) {
   .booking-container {
     padding: 30px 20px;
+    width: 90%;
   }
 
   .booking-form {
@@ -310,13 +311,18 @@ select {
 /* Full-screen background image */
 .parallax-background {
   background-image: url('../images/parallax2.jpg'); /* Set background image */
-  background-size: cover;             /* Cover the entire div */
-  background-position: center;        /* Center the image */
-  height: 100vh;                      /* Full viewport height */                     /* Full viewport width */
+       /* Center the image */
+  height: 130vh;    
+  padding-top: 20px;                  /* Full viewport height */                     /* Full viewport width */
   display: flex;                      /* Center contents horizontally and vertically */
   align-items: center;
   justify-content: center;
-  position: relative;                 /* Position for overlay elements */
+  position: relative;     
+  background-attachment: fixed;   
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;         /* Position for overlay elements */
 }
 
 /* Centered overlay for Booking component */
@@ -328,6 +334,8 @@ select {
     padding: 20px;
     width: 95%;
   }
+
+
 }
 .booking-overlay{
   position: relative;

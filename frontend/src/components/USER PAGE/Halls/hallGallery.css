@@ -1,0 +1,401 @@
+/* 
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+} */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+/* Modal Container */
+.modal-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 85%;
+  height: 80%;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+align-items: center;
+  justify-content: space-evenly;
+}
+/* Close Button */
+/* Add this to hallGallery.css or in your global styles */
+.close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.close-btn:hover{
+  background-color: none;
+
+}
+
+
+/* Gallery Container */
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main Image */
+.main-image {
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* Individual Thumbnail */
+
+
+/* Main Image */
+.main-image {
+  width: 630px;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex
+;
+  justify-content: center;
+  align-items: center;
+}
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the image covers the entire container, keeping its aspect ratio */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Thumbnails Container */
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Individual Thumbnail */
+.thumbnail {
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.thumbnail img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Active Thumbnail */
+.thumbnail.active img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.thumbnail:hover img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.BookSection{
+  margin-bottom: 8rem;
+}
+#banner-background {
+  background-image: url('../images/parallax1.jpg');
+  background-position: center;
+  background-blend-mode: multiply;
+  background-size: cover;
+ margin-top: 5rem;
+  width: 100%;
+  
+}
+
+.banner-container {
+  display: flex
+;
+height: 500px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 4rem;
+
+  padding-bottom: 3rem;
+}
+
+.banner-image {
+  width: 600px;
+
+
+}
+.banner-image img{
+  object-fit: cover;
+  width: 100%;
+  margin-top: 4rem;
+  border-radius:10px;
+
+}
+
+
+.banner-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(0, 0, 0);
+
+}
+
+/* Banner Section */
+.banner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+.banner-image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.banner-text h3{
+  font-size: 3rem;
+  
+}
+.banner-text p{
+  font-size:1rem;
+  font-weight:600;
+  font-family:sans-serif;
+}
+/* Advertisement Section */
+.advertisement {
+  text-align: center;
+  margin: 1rem 4rem;
+  padding: 1rem;
+  background-color: #54c0ff;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+}
+
+.advertisement h2 {
+  color: #ffffff;
+  font-size: 3rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.testimonial-item {
+  background-color: #f2f2f2;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+  font-style: italic;
+}
+
+/* Call-to-Action Section */
+.cta-section {
+  background-color: #343a40;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.offer-Button{
+  background: white;
+}
+/* Modal Styling and Other Styles (From Existing Code) */
+/* Add the rest of your CSS here */
+
+
+.event-hall-grid-user {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 4 cards per row */
+  gap: 20px;
+  padding: 0rem 3rem 0rem 6rem;
+}
+
+.event-hall-card-user {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-body-user {
+  padding: 20px;
+  
+}
+.event-hall-card-user img {
+  width: 100%; /* Ensures the image takes the full width */
+  aspect-ratio: 16/9; /* Aspect ratio of 16:9 for consistent image size */
+  object-fit: cover; /* Prevents image stretching */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.event-hall-card-user h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.event-hall-card-user p {
+  font-size: 14px;
+  color: #666;
+  flex-grow: 1; /* Ensures content area grows */
+}
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+
+  margin: 2rem auto;
+}
+
+.event-hall-grid-user {
+  display: flex;
+  overflow-x: hidden; /* Hide overflow */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  gap: 1rem;
+  width: 100%;
+  padding:5rem 0rem 5rem 0rem;
+}
+
+.event-hall-card-user {
+  flex: 0 0 auto; /* Prevent shrinking */
+  width: 280px; /* Fixed width for each card */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.carousel-btn.prev {
+  left: 2px;
+}
+
+.carousel-btn.next {
+  right: 2px;
+}
+
+.carousel-btn:hover {
+  background-color: #0056b3;
+}
+
+.hall-banner{
+  margin-bottom: 18rem;
+}
+ 
+
+
+@media (max-width: 768px) {
+  .gallery-container {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .main-image img {
+    max-width: 90%; /* Adjust width for tablets */
+  }
+
+  .thumbnails {
+    gap: 0.5rem; /* Adjust spacing */
+  }
+
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 480px) {
+  .gallery-container {
+    padding: 0.5rem; /* Further reduce padding */
+  }
+
+  .main-image img {
+    max-width: 100%; /* Use full width for mobile */
+  }
+
+  .thumbnail {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 376px) {
+
+  .hall-banner{
+    margin-bottom: 18rem;
+  }
+   
+      
+}
+@media (width: 768px) {
+
+  
+.hall-banner{
+    margin-bottom: 18rem;
+  }
+}

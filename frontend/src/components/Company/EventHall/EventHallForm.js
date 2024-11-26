@@ -50,8 +50,8 @@ function EventHallForm() {
 
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
-    if (files.length + formData.images.length > 3) {
-      alert('You can upload a maximum of 3 images.');
+    if (files.length + formData.images.length > 5) {
+      alert('You can upload a maximum of 5 images.');
       return;
     }
 
@@ -63,8 +63,8 @@ function EventHallForm() {
 
   const handleFinalSubmit = async (e) => {
     e.preventDefault();
-    if (formData.images.length !== 3) {
-      alert('Please upload exactly 3 images.');
+    if (formData.images.length !== 5) {
+      alert('Please upload exactly 5 images.');
       return;
     }
 
@@ -148,7 +148,7 @@ function EventHallForm() {
           required
         />
 
-        <label htmlFor="images">Upload Images (Max 3):</label>
+        <label htmlFor="images">Upload Images (Max 5):</label>
         <input
           type="file"
           name="images"

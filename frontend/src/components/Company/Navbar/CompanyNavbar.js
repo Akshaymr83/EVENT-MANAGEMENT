@@ -34,7 +34,7 @@ function CompanyNavbar() {
     <div className='navbarcontainer'>
       <Navbar fixed="top" expand="lg" className="navbar">
         <Container>
-          <Navbar.Brand >CLICK BYTES</Navbar.Brand>
+          <Navbar.Brand >CLICK BYTES COMPANY</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">

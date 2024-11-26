@@ -133,4 +133,29 @@
     border-radius: 4px;
   }
   
-  
+  @media (max-width: 376px) {
+    .package-container {
+    height: 100%;
+    }
+   
+    .package-left-section{
+    visibility: hidden;
+    }
+    .package-form-section{
+      width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    .package-container {
+      height: 100%;
+      width: 100%;
+      }
+     
+      .package-left-section{
+      visibility: hidden;
+      }
+      .package-form-section{
+        width: 100%;
+      }
+   
+  }

@@ -122,7 +122,7 @@ function Works() {
             </p>
         </div>
 
-        <div className='feedbacks'>
+        {/* <div className='feedbacks'>
 
           <h1 className='feedbackstitle'>FEEDBACKS</h1>
           <div class="input-container">
@@ -137,7 +137,7 @@ function Works() {
            </div>
            <button className='sub-btn'>Submit</button>
 
-        </div>
+        </div> */}
 
 
               

@@ -3,12 +3,19 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  background:url('../../USER\ PAGE/images/smiling-women-man-evening-wear-with-glasses-drinks-floor - Copy.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
 }
 
 .event-hall-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
+  margin-top: 9rem;;
+  
 }
 
 .event-hall-card {
@@ -23,23 +30,6 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%; /* Ensures the content fits within the increased card height */
-}
-
-.card-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.card-text {
-  margin-bottom: 10px;
 }
 
 .hall-carousel {
@@ -81,7 +71,7 @@
   width: 100%;
 }
 
-.btn {
+.btn-eventHallCard {
   width: 45%; /* Reduced width for the buttons */
 }
 
@@ -179,28 +169,30 @@
     display: flex;
     flex-direction: column;
     flex: 0.2 0.2 auto;
-    align-items:baseline
+    align-items:center;
+    justify-content: center;
   }
   .card-title{
     color: rgb(31, 30, 30);
   }
   /* Modal Background */
   /* Modal Customization */
-.modal-content {
+.modal-content-eventHallCard {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.modal-header {
+.modal-header-eventHallCard {
   background-color: #000000;
   border-bottom: 1px solid #ddd;
 }
 
-.modal-body {
+.modal-body-eventHallCard {
   padding: 20px;
 }
 
-.form-label {
+.form-label-eventHallCard {
+  color: white;
   font-weight: 600;
 }
 
@@ -208,25 +200,20 @@
   border-radius: 5px;
 }
 
-.btn-primary {
-  background-color: #007bff;
+.btn-eventHallCard {
+  background-color: #141414;
   border-color: #007bff;
+  color: white;
 }
 
-.btn-secondary {
-  background-color: #000000;
-  border-color: #6c757d;
-}
 
-.modal-footer {
+.modal-footer-eventHallCard {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 }
 
-.twoButtons button {
-  min-width: 100px;
-}
+
 /* Enhanced label styling */
 .form-label {
   font-size: 14px; /* Adjusts font size */
@@ -246,7 +233,7 @@
   transition: all 0.3s ease; /* Smooth transition effect */
 }
 /* Overlay Background Blur */
-.modal-overlay {
+.modal-overlay-eventHallCard {
   position: fixed;
   top: 0;
   left: 0;
@@ -254,39 +241,51 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
   backdrop-filter: blur(5px); /* Apply blur effect */
-  z-index: 1040; /* Make sure the overlay stays behind the modal */
+  z-index: 1040; 
+  width: 100%;/* Make sure the overlay stays behind the modal */
 }
-.modal-content {
+.modal-content-eventHallCard {
   position: relative;
-  z-index: 1050; /* Ensure modal content stays on top */
+  z-index: 1050; 
+  background: #000000b8;
+  width: 100%;/* Ensure modal content stays on top */
  /* Horizontal centering */
 }
 
 /* Centering Modal Dialog */
-.modal-dialog {
+.modal-dialog-eventHallCard{
   position: absolute;
-  top: 50%;
-  left: 38%;
-  transform: translate(-50%, -50%); /* Center the modal vertically and horizontally */
+  left: 25%;
+  width: 60%;
+  padding: 3rem;
+ 
+/* Center the modal vertically and horizontally */
 }
 
 /* Optional: Styling for modal */
-.modal-header {
-  background-color: #000000;
+.modal-header-eventHallCard{
+  background: none;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+  padding: 1rem;
+
+}
+.close-eventHallCard{
+  color: white;
+  background: none;
 }
 
-.modal-footer {
+.modal-footer-eventHallCard {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 }
 
-.twoButtons{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 9rem;
 
-}
 .event-hall-container {
   padding: 20px;
 }
@@ -295,7 +294,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
   gap: 20px;
-  padding: 0;
+  padding: 0rem 3rem 0rem 6rem;
 }
 
 .event-hall-card {
@@ -308,12 +307,13 @@
 
 .card-body {
   padding: 20px;
+  
 }
 
 .twio-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  
 }
 
 @media (max-width: 1200px) {

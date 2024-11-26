@@ -83,12 +83,17 @@
     position: relative;
     isolation: isolate;
     cursor: pointer;
+    height: 320px;
+    border-radius: 1rem;
+    background-color:  rgba(255, 214, 0, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
   }
   
-  .destination__card img {
-    border-radius: 1rem;
-    width: 400px;
-  }
+  
   
   .destination__details {
     position: absolute;
@@ -106,10 +111,16 @@
     z-index: 1;
     transition: 0.3s;
     color: black;
+    visibility: hidden;
   }
   
   .destination__card:hover .destination__details {
     bottom: 1rem;
+  visibility: visible;
+  }
+  .destination__card:hover .headingBox {
+ 
+  visibility: hidden
   }
   
   .destination__title {
@@ -121,6 +132,22 @@
     font-size: 1rem;
     font-weight: 600;
   }
+
+  .destination__heading{
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+
+
+
+  }
+  .headingBox {
+    background: rgb(255, 255, 255);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    color: black;
+}
   @media (max-width: 991px) {
     .About-head2 {
       font-size: 4rem;

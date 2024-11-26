@@ -91,7 +91,7 @@ const EventPackages = () => {
       <Top />
       
       <div className="main-content">
-        <div className="package-container">
+        <div className="package-container-card">
           <div className="package-options">
             {packages.map((pkg) => (
               <div

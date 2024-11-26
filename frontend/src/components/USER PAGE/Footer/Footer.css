@@ -51,3 +51,34 @@
     list-style-type: none;
 
 }
+
+
+ /* Responsive styling */
+ @media (max-width: 1124px) {
+    .footer-container{
+        margin-top: 2rem;
+    }
+    /* Tablet view adjustments */
+  .lists ul{
+    visibility: hidden;
+  }
+
+    
+  }
+  
+    
+  @media (max-width: 300px) {
+   
+   
+  }
+  
+    
+  
+  @media (max-width: 376px) {
+   
+      
+  }
+  @media (width: 768px) {
+  
+    
+  }

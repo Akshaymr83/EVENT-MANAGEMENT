@@ -28,6 +28,11 @@ import CompanyLayout from './components/Company/CompanyLayout/CompanyLayout';
 import AdminLayout from './components/ADMIN PAGE/AdminLayout/AdminLayout';
 import UsersTable from './components/ADMIN PAGE/Tables/UserTable';
 import CompanyTable from './components/ADMIN PAGE/Tables/CompanyTable';
+import Halls from './components/USER PAGE/Halls/Halls';
+
+import UserLayout from './components/USER PAGE/UserLayout/UserLayout';
+import HallBanner from './components/USER PAGE/Halls/HallBanner';
+
 
 function App() {
   const [events, setEvents] = useState([]); // Shared state for events
@@ -53,15 +58,19 @@ function App() {
       <Router>
       {/* <Top/> */}
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/verify-otp/:userId" element={<VerifyOTP />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/booking" element={<EventBooking/>} />
-          <Route path="/bookingDetails" element={<BookingDetails userId={userId} />} />
-          <Route path= "/packages" element={<EventPackages/>}/>
+        <Route path="/" element={<UserLayout><Home /></UserLayout>} />
+        <Route path="/about" element={<UserLayout><About /></UserLayout>} />
+        <Route path="/services" element={<UserLayout><Services /></UserLayout>} />
+        <Route path="/signup" element={<UserLayout><Signup /></UserLayout>} />
+        <Route path="/verify-otp/:userId" element={<UserLayout><VerifyOTP /></UserLayout>} />
+        <Route path="/login" element={<UserLayout><Login /></UserLayout>} />
+        <Route path="/booking" element={<UserLayout><EventBooking /></UserLayout>} />
+        <Route path="/bookingDetails" element={<UserLayout><BookingDetails /></UserLayout>} />
+        <Route path="/packages" element={<UserLayout><EventPackages /></UserLayout>} />
+        <Route path="/halls" element={<UserLayout><Halls /></UserLayout>} />
+        <Route path="/hallBanner" element={<UserLayout><HallBanner /></UserLayout>} />
+
+      
 
           {/* ADMIN */}
           <Route path="/adminHome" element={<AdminLayout><AdminHome /></AdminLayout>} />

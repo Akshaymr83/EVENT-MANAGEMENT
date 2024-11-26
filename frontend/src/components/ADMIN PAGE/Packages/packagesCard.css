@@ -104,3 +104,9 @@
   .packages-modal-footer button {
     min-width: 100px;
   }
+
+  @media (max-width: 376px) {
+  .packages-list-group-item{
+ width: 90%;
+  }
+  }

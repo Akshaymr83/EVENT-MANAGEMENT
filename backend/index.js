@@ -9,6 +9,7 @@ const adminRoutes = require('./api/Admin');
 const bookingRoutes = require('./api/Booking');
 const packagesRoutes = require('./api/packages')
 const eventHallRoutes = require('./api/EventHall')
+const reviewRoutes = require('./api/Review')
 const path = require('path')
 
 const app = express();
@@ -33,6 +34,7 @@ app.use('/api/event', bookingRoutes); // Ensure booking routes are registered
 app.use('/api/packages',packagesRoutes)
 app.use('/api/company',companyRoutes)
 app.use('/api/eventHall',eventHallRoutes)
+app.use('/api/review', reviewRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -86,11 +86,11 @@
   .input-container input {
     width: 100%;
     margin-bottom: 2.4rem;
-    height: 2.7rem;
+    height: 4rem;
     padding-left: 22px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     background: rgb(0 0 0 / 84%);
-    border-radius: 4rem;
+    border-radius: 1rem;
     border: 1px solid #000000;
   }
   .input-container input::placeholder{
@@ -101,7 +101,7 @@
 
   }
   .photobox{
-    margin: 7rem;
+    margin: 11rem;
   
   }
   @media (max-width: 991px) {

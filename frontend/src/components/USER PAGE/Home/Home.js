@@ -11,6 +11,7 @@ import Works from '../Works/Works';
 import Contact from '../Contact/Contact';
 import Review from '../Review/Review';
 import img from '../images/female-wedding-planner-working-ceremony.jpg'
+import HallBanner from '../Halls/HallBanner';
 
 
 
@@ -69,12 +70,14 @@ function Home() {
       </div>
       <About/>
       <Services/>
+      <HallBanner/>
       <Works/>
       <Review/>
       <Contact/>
  
      
     </div>
+    
     <Footer/>
     </>
   );

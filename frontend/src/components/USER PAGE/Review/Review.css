@@ -1,11 +1,11 @@
-.reviewContainer{
+/* .reviewContainer{
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 gap: 1rem;
 }
 
 .reviewCard{
-    background-color: black;
+    background-color: #00000082;
     height: 350px;
     width: 300px;
     border-radius: 1rem;
@@ -33,4 +33,147 @@ gap: 1rem;
             padding: 3rem;
             align-items: center;
         }
-        
+         */
+.feedbacks {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.feedbackstitle {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row; /* Horizontal layout */
+  gap: 20px; /* Space between input fields */
+  margin-bottom: 20px;
+}
+
+.input-container  textarea{
+    width: 100%;
+    margin-bottom: 2.4rem;
+    height: 4rem;
+    padding-left: 22px;
+    color: rgb(255, 255, 255);
+    background: rgb(0 0 0 / 84%);
+    border-radius: 1rem;
+    border: 1px solid #000000;
+  }
+
+.input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.review-textarea {
+  width: 400px; /* Define width */
+  height: 100px; /* Define height */
+  resize: none; /* Prevent resizing */
+  max-width: 80%;
+}
+
+.sub-btn {
+  padding: 10px 20px;
+  background-color: #ffd001;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.sub-btn:hover {
+  background-color: #000000;
+  color: white;
+}
+
+.reviewContainer {
+    margin-top: 30px;
+    display: flex
+;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.reviewbox {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 80%;
+  max-width: 600px;
+  height: 200px; /* Set a fixed height to ensure the boxes are the same size */
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.reviewbox:hover {
+  transform: scale(1.05);
+}
+
+.reviewCard {
+  text-align: center;
+}
+
+.reviewText {
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 10px;
+  height: 100%;  /* Ensure the content fits the box */
+  overflow: hidden;
+}
+
+.reviewCard h6 {
+  color: #777;
+}
+
+.paginationButtons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin: 0 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+.paginationCircles {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  
+  .paginationCircle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .paginationCircle:hover {
+    background-color: #bbb;
+  }
+  
+  .paginationCircle.active {
+    background-color: #007bff;  /* Blue color for active page */
+  }
+  

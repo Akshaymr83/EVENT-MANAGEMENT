@@ -5,6 +5,9 @@ import axios from 'axios';
 import { Carousel } from 'react-bootstrap';
 import './EventHallCard.css';
 import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBuilding, faLock } from '@fortawesome/free-solid-svg-icons';
 
 function EventHallCard() {
   const { id } = useParams();
@@ -13,7 +16,8 @@ function EventHallCard() {
   const companyId = company ? company.companyId : null;
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedHall, setSelectedHall] = useState(null);
-  const [newFiles, setNewFiles] = useState([]); // To store new files selected in modal
+  const [newFiles, setNewFiles] = useState([]);
+   // To store new files selected in modal
 
   const fetchEventHalls = async () => {
     try {
@@ -136,8 +140,8 @@ function EventHallCard() {
               )}
 
               <div className="twio-buttons">
-                <button className="btn btn-warning" onClick={() => openModal(hall)}>Edit</button>
-                <button className="btn btn-danger" onClick={() => handleDelete(hall._id)}>Delete</button>
+                <button className="btn-eventHallCard" onClick={() => openModal(hall)}>Edit</button>
+                <button className="btn-eventHallCard" onClick={() => handleDelete(hall._id)}>Delete</button>
               </div>
             </div>
           </div>
@@ -145,34 +149,36 @@ function EventHallCard() {
       </div>
 
       {selectedHall && (
-        <div className="modal-overlay" style={{ display: modalIsOpen ? 'block' : 'none' }}>
+        <div className="modal-overlay-eventHallCard" style={{ display: modalIsOpen ? 'block' : 'none' }}>
           <div className="modal fade show" style={{ display: modalIsOpen ? 'block' : 'none' }} id="updateModal" tabIndex="-1" aria-labelledby="updateModalLabel" aria-hidden={!modalIsOpen}>
-            <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="updateModalLabel">Update Event Hall</h5>
-                  <button type="button" className="btn-close" onClick={closeModal} aria-label="Close"></button>
+            <div className="modal-dialog-eventHallCard">
+              <div className="modal-content-eventHallCard">
+                <div className="modal-header-eventHallCard">
+                  <h5 className="modal-title-eventHallCard" id="updateModalLabel">Update Event Hall</h5>
+                  <button type="button" className="close-eventHallCard" onClick={closeModal} > <FontAwesomeIcon icon={faCircleXmark} size="lg"  /></button>
+                
+                 
                 </div>
-                <div className="modal-body">
+                <div className="modal-body-eventHallCard">
                   <form onSubmit={handleUpdate}>
                     <div className="mb-3">
-                      <label htmlFor="name" className="form-label">Name:</label>
+                      <label htmlFor="name" className="form-label-eventHallCard">Name:</label>
                       <input type="text" className="form-control" name="name" value={selectedHall.name} onChange={handleChange} required />
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="location" className="form-label">Location:</label>
+                      <label htmlFor="location" className="form-label-eventHallCard">Location:</label>
                       <input type="text" className="form-control" name="location" value={selectedHall.location} onChange={handleChange} required />
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="description" className="form-label">Description:</label>
+                      <label htmlFor="description" className="form-label-eventHallCard">Description:</label>
                       <textarea className="form-control" name="description" value={selectedHall.description} onChange={handleChange} required />
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="price" className="form-label">Price:</label>
+                      <label htmlFor="price" className="form-label-eventHallCard">Price:</label>
                       <input type="number" className="form-control" name="price" value={selectedHall.price} onChange={handleChange} required />
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="images" className="form-label">Upload Images (Max 3):</label>
+                      <label htmlFor="images" className="form-label-eventHallCard">Upload Images (Max 5):</label>
                       <input
                         type="file"
                         name="images"
@@ -191,7 +197,7 @@ function EventHallCard() {
     ))}
   </ul>
                     </div>
-                    <div className="modal-footer">
+                    <div className="modal-footer-eventHallCard">
                       <button type="button" className="btn btn-secondary" onClick={closeModal}>Close</button>
                       <button type="submit" className="btn btn-primary">Update</button>
                     </div>

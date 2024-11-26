@@ -139,6 +139,19 @@ router.get('/eventhalls/:companyId', async (req, res) => {
   }
 });
 
+
+router.get('/eventhalls', async (req, res) => {
+  try {
+    // Fetch all event halls
+    const eventHalls = await EventHall.find({});
+    res.json(eventHalls);
+  } catch (error) {
+    console.error("Error fetching event halls:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+
 // POST: Create a new Event Hall
 router.post('/eventhalls', upload.array('images', 5), async (req, res) => {
   try {
